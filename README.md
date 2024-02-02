@@ -1,3 +1,6 @@
+![](https://img.shields.io/github/license/rdavydov/link-to-friends-who-play?style=for-the-badge&logo=github&color=purple&logoColor=thistle)
+![](https://img.shields.io/greasyfork/dt/450407?style=for-the-badge&logo=tampermonkey&color=darkblue&logoColor=aquamarine)
+
 ## Amazon Prime Ad Remover
 Only for users who don't use Amazon Prime and do not intend to use in the future. This script will get rid of annoying daily notifications.
 
