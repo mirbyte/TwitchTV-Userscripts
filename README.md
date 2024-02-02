@@ -12,4 +12,4 @@ Pauses the autoplay of twitch.tv frontpage carousel.
 
 
 
-Get Violentmonkey in https://violentmonkey.github.io/get-it/
+Download Violentmonkey in https://violentmonkey.github.io/get-it/
