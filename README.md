@@ -10,6 +10,7 @@ Pauses the autoplay of twitch.tv frontpage carousel.
 
 # Amazon Prime Pop-up Remover
 Removes the Amazon Prime pop-up ad that comes as an overlay during streams.
+
 ![popup](https://github.com/mirbyte/Violentmonkey-Twitch-Scripts/assets/83219244/121494f7-6a7f-447b-845e-498eb62ceb8a)
 
 Get Violentmonkey in https://violentmonkey.github.io/get-it/
