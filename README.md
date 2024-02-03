@@ -10,6 +10,7 @@ Pauses the autoplay of twitch.tv frontpage carousel.
 
 ![autoplay](https://github.com/mirbyte/Violentmonkey-Twitch-Scripts/assets/83219244/cb2d4dde-66d2-4c46-a762-8c151c986881)
 
+# Amazon Prime Pop-up Remover
 
-
+/////////////////////////////////////////////////////////////
 Get Violentmonkey in https://violentmonkey.github.io/get-it/
