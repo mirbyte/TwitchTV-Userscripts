@@ -12,5 +12,5 @@ Pauses the autoplay of twitch.tv frontpage carousel.
 
 # Amazon Prime Pop-up Remover
 
-/////////////////////////////////////////////////////////////
+
 Get Violentmonkey in https://violentmonkey.github.io/get-it/
