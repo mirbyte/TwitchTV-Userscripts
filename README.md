@@ -1,3 +1,4 @@
+![](https://img.shields.io/github/repo-size/mirbyte/TwitchTV-Userscripts)
 
 # Turbo Subscription Button Remover
 Only for users who don't intend to use Turbo in the near future. Adds an empty placeholder for aesthetic purposes.
