@@ -50,7 +50,8 @@ _Get Violentmonkey at https://violentmonkey.github.io/get-it/_
 
 <br>
 
-![installation](https://github.com/user-attachments/assets/b2caf26e-fa7a-4ea8-9db4-db83bbbb3f48)
+
+![installation](https://github.com/user-attachments/assets/dae442c4-88d4-41e3-9d88-9d76b60f683d)
 
 
 
