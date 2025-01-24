@@ -1,5 +1,10 @@
 
 
+![installation](https://github.com/user-attachments/assets/e6cd4868-5fa5-40ac-bffa-765107833ce0)
+
+
+
+
 # Turbo Subscription Button Remover
 Only for users who don't intend to use Turbo in the near future. Adds an empty placeholder for aesthetic purposes.
 
