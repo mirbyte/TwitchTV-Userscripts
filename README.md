@@ -1,17 +1,18 @@
 
 
 # Turbo Subscription Button Remover
-Also adds an empty placeholder for aesthetic purposes.
+Only for users who don't use Amazon Prime and do not intend to use in the future. Adds an empty placeholder for aesthetic purposes.
 
 ![goadfreettv-1](https://github.com/user-attachments/assets/f06c5747-8b7c-4143-895e-e52530a9d170)
 
 
 <br>
 
-# Amazon Prime Ad Remover
+# Prime Notifications Remover
 Only for users who don't use Amazon Prime and do not intend to use in the future. This script will get rid of annoying daily notifications.
 
-![bar](https://github.com/mirbyte/Tampermonkey-Twitch-Scripts/assets/83219244/66edc374-e6eb-447e-b6ae-aff877b039b5)
+![primenotif](https://github.com/user-attachments/assets/2bdddb21-d18a-4bdb-ad22-8f8097bf4f0c)
+
 
 
 <br>
