@@ -1,7 +1,7 @@
 
 
 # Turbo Subscription Button Remover
-Only for users who don't use Amazon Prime and do not intend to use in the future. Adds an empty placeholder for aesthetic purposes.
+Only for users who don't intend to use Turbo in the near future. Adds an empty placeholder for aesthetic purposes.
 
 ![goadfreettv-1](https://github.com/user-attachments/assets/f06c5747-8b7c-4143-895e-e52530a9d170)
 
