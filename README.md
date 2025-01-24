@@ -1,10 +1,4 @@
 
-
-![installation](https://github.com/user-attachments/assets/e6cd4868-5fa5-40ac-bffa-765107833ce0)
-
-
-
-
 # Turbo Subscription Button Remover
 Only for users who don't intend to use Turbo in the near future. Adds an empty placeholder for aesthetic purposes.
 
@@ -40,6 +34,10 @@ Removes the Amazon Prime pop-up ad that comes as an overlay during streams.
 <br>
 <br>
 <br>
+
+
+![installation](https://github.com/user-attachments/assets/ac5e855e-d2fb-4f91-baf3-3f7a27c5c19a)
+
 
 ### Recommended Usage: Violentmonkey
 _Get Violentmonkey at https://violentmonkey.github.io/get-it/_
