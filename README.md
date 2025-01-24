@@ -1,8 +1,9 @@
 # Turbo Subscription Button Remover
 Also adds an empty placeholder for aesthetic purposes.
-![goadfreettv](https://github.com/user-attachments/assets/c93e6167-9281-4c8a-b614-8fa44b3b1b4b)
+![goadfreettv-1](https://github.com/user-attachments/assets/c7d61a7f-041d-4966-8d82-7ffdc1108e9b)
 
 
+<br>
 
 # Amazon Prime Ad Remover
 Only for users who don't use Amazon Prime and do not intend to use in the future. This script will get rid of annoying daily notifications.
