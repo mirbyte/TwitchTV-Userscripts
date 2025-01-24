@@ -1,4 +1,4 @@
-[![Size](https://img.shields.io/github/repo-size/mirbyte/TwitchTV-Userscripts?color=purple&label=Repo+Size)](https://img.shields.io/github/repo-size/mirbyte/TwitchTV-Userscripts?color=purple&label=Repo+Size)
+[![Size](https://img.shields.io/github/repo-size/mirbyte/TwitchTV-Userscripts?color=purple&label=Size)](https://img.shields.io/github/repo-size/mirbyte/TwitchTV-Userscripts?color=purple&label=Size)
 [![Updated](https://badges.pufler.dev/updated/mirbyte/TwitchTV-Userscripts?color=purple)](https://badges.pufler.dev)
 [![Created](https://badges.pufler.dev/created/mirbyte/TwitchTV-Userscripts?color=purple)](https://badges.pufler.dev)
 
