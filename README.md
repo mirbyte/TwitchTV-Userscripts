@@ -37,12 +37,12 @@ Removes the Amazon Prime pop-up ad that comes as an overlay during streams.
 <br>
 <br>
 <br>
-<br>
 
 
 ### Recommended Usage: Violentmonkey
 _Get Violentmonkey at https://violentmonkey.github.io/get-it/_
 
+<br>
 
 ![installation](https://github.com/user-attachments/assets/b2caf26e-fa7a-4ea8-9db4-db83bbbb3f48)
 
