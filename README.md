@@ -1,7 +1,9 @@
+
+
 ## Turbo Subscription Button Remover
 Also adds an empty placeholder for aesthetic purposes.
 
-![goadfreettv-1](https://github.com/user-attachments/assets/c7d61a7f-041d-4966-8d82-7ffdc1108e9b)
+![goadfreettv-1](https://github.com/user-attachments/assets/f06c5747-8b7c-4143-895e-e52530a9d170)
 
 
 <br>
