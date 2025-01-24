@@ -1,3 +1,7 @@
+# Turbo Subscription Button Remover
+Also adds an empty placeholder for aesthetic purposes.
+![goadfreettv](https://github.com/user-attachments/assets/c93e6167-9281-4c8a-b614-8fa44b3b1b4b)
+
 
 
 # Amazon Prime Ad Remover
