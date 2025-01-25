@@ -1,7 +1,7 @@
-![Size](https://img.shields.io/github/repo-size/mirbyte/TwitchTV-Userscripts?color=6441a5&label=Size)
-![License](https://img.shields.io/github/license/mirbyte/TwitchTV-Userscripts?color=purple)
-![Created](https://badges.pufler.dev/created/mirbyte/TwitchTV-Userscripts?color=purple)
-![LastCommit](https://img.shields.io/github/last-commit/mirbyte/TwitchTV-Userscripts?color=purple&label=Updated)
+![Size](https://img.shields.io/github/repo-size/mirbyte/TwitchTV-Userscripts?color=6034b2&label=Size)
+![License](https://img.shields.io/github/license/mirbyte/TwitchTV-Userscripts?color=6034b2)
+![Created](https://badges.pufler.dev/created/mirbyte/TwitchTV-Userscripts?color=6034b2)
+![LastCommit](https://img.shields.io/github/last-commit/mirbyte/TwitchTV-Userscripts?color=6034b2&label=Updated)
 
 <!-- [![Visits](https://badges.pufler.dev/visits/mirbyte/TwitchTV-Userscripts?color=purple)](https://badges.pufler.dev) -->
 
