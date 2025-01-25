@@ -5,7 +5,7 @@
 // @grant       none
 // @version     1.6
 // @author      mirbyte (https://github.com/mirbyte)
-// @description Edits the Turbo ad banner to be a transparent placeholder.
+// @description Edits the Turbo ad banner to be a transparent placeholder. Check GitHub page for the demonstration image.
 // @icon        https://banner2.cleanpng.com/20180513/xie/kisspng-twitch-computer-icons-logo-5af8037d689af0.0981376915262032614285.jpg
 // ==/UserScript==
 
