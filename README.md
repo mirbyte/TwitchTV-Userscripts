@@ -8,6 +8,8 @@
 # Turbo Subscription Button Remover
 Only for users who don't intend to use Turbo in the near future. Adds an empty placeholder for aesthetic purposes.
 
+[install](https://update.greasyfork.org/scripts/524848/Turbo%20Subscription%20Button%20Remover.user.js)
+
 ![goadfreettv-1](https://github.com/user-attachments/assets/f06c5747-8b7c-4143-895e-e52530a9d170)
 
 
