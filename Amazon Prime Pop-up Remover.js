@@ -5,7 +5,7 @@
 // @grant       none
 // @version     1.0
 // @author      mirbyte (https://github.com/mirbyte)
-// @description Removes Amazon Prime pop-up ad on Twitch streams.
+// @description Removes Amazon Prime overlay ad on Twitch streams.
 // @icon        https://banner2.cleanpng.com/20180513/xie/kisspng-twitch-computer-icons-logo-5af8037d689af0.0981376915262032614285.jpg
 // ==/UserScript==
 
