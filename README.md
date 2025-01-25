@@ -1,6 +1,6 @@
 ![Size](https://img.shields.io/github/repo-size/mirbyte/TwitchTV-Userscripts?color=purple&label=Size)
 ![Created](https://badges.pufler.dev/created/mirbyte/TwitchTV-Userscripts?color=purple)
-![LastCommit](https://img.shields.io/github/last-commit/mirbyte/TwitchTV-Userscripts?color=purple)
+![LastCommit](https://img.shields.io/github/last-commit/mirbyte/TwitchTV-Userscripts?color=purple&label=Updated)
 
 <!-- [![Visits](https://badges.pufler.dev/visits/mirbyte/TwitchTV-Userscripts?color=purple)](https://badges.pufler.dev) -->
 
