@@ -5,7 +5,7 @@
 // @grant       none
 // @version     1.0
 // @author      mirbyte (https://github.com/mirbyte)
-// @description Removes amazon prime ad/button on Twitch.tv
+// @description Removes amazon prime ad/button on Twitch.tv. Check GitHub page for the demonstration image.
 // @icon         https://banner2.cleanpng.com/20180513/xie/kisspng-twitch-computer-icons-logo-5af8037d689af0.0981376915262032614285.jpg
 // ==/UserScript==
 
