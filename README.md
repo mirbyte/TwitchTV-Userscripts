@@ -2,6 +2,8 @@
 [![Created](https://badges.pufler.dev/created/mirbyte/TwitchTV-Userscripts?color=purple)]()
 [![Updated](https://badges.pufler.dev/updated/mirbyte/TwitchTV-Userscripts?color=purple)]()
 
+[![Updated Badge](https://badges.pufler.dev/updated/mirbyte/TwitchTV-Userscripts)](https://badges.pufler.dev)
+
 <!-- [![Visits](https://badges.pufler.dev/visits/mirbyte/TwitchTV-Userscripts?color=purple)](https://badges.pufler.dev) -->
 
 # Turbo Subscription Button Remover
