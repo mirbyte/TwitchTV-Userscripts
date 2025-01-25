@@ -3,7 +3,7 @@
 // @namespace   https://github.com/mirbyte/TwitchTV-Userscripts/edit/main/Turbo%20Subscription%20Button%20Remover.js
 // @match       *://www.twitch.tv/*
 // @grant       none
-// @version     1.6
+// @version     1.7
 // @author      mirbyte
 // @description Edits the Turbo ad banner to be a transparent placeholder. Check GitHub page for the demonstration image.
 // @icon        https://banner2.cleanpng.com/20180513/xie/kisspng-twitch-computer-icons-logo-5af8037d689af0.0981376915262032614285.jpg
