@@ -20,7 +20,7 @@ _**[install](https://update.greasyfork.org/scripts/524848/Turbo%20Subscription%2
 # Prime Notifications Remover
 Only for users who don't use Amazon Prime and do not intend to use in the future. This script will get rid of annoying daily notifications.
 
-_**[install]()**_
+_**[install](https://update.greasyfork.org/scripts/524854/Twitchtv%20Amazon%20Prime%20Ad%20Remover.user.js)**_
 
 ![primenotif](https://github.com/user-attachments/assets/2bdddb21-d18a-4bdb-ad22-8f8097bf4f0c)
 
