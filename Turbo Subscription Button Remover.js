@@ -3,10 +3,12 @@
 // @namespace   https://github.com/mirbyte/TwitchTV-Userscripts/edit/main/Turbo%20Subscription%20Button%20Remover.js
 // @match       *://www.twitch.tv/*
 // @grant       none
-// @version     1.7
+// @version     1.8
 // @author      mirbyte
 // @description Edits the Turbo ad banner to be a transparent placeholder. Check GitHub page for the demonstration image.
 // @icon        https://banner2.cleanpng.com/20180513/xie/kisspng-twitch-computer-icons-logo-5af8037d689af0.0981376915262032614285.jpg
+// @downloadURL https://update.greasyfork.org/scripts/524848/Turbo%20Subscription%20Button%20Remover.user.js
+// @updateURL https://update.greasyfork.org/scripts/524848/Turbo%20Subscription%20Button%20Remover.meta.js
 // ==/UserScript==
 
 (function() {
@@ -17,12 +19,11 @@
         var adButton = document.querySelector('.Layout-sc-1xcs6mc-0.hatIYF [data-a-target="tw-core-button-label-text"]');
         var adButtonTexts = [
             "Go Ad-Free for Free",
-            "Slip gratis for reklamer",
-            "Kostenlos werbefrei zuschauen",
-            "Dile adiós a publicidad de forma gratuita",
-            "Regardez sans publicité gratuitement",
             "Poista mainokset ilmaiseksi",
-            // add more languages here
+            "Poista mainokset",
+            "Get Ad-Free",
+            "Go Ad-Free",
+            // add more here
         ];
 
         if (adButton && adButtonTexts.includes(adButton.textContent.trim())) {
