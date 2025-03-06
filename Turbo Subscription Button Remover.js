@@ -3,7 +3,7 @@
 // @namespace   https://github.com/mirbyte/TwitchTV-Userscripts/edit/main/Turbo%20Subscription%20Button%20Remover.js
 // @match       *://www.twitch.tv/*
 // @grant       none
-// @version     1.8
+// @version     1.9
 // @author      mirbyte
 // @description Edits the Turbo ad banner to be a transparent placeholder. Check GitHub page for the demonstration image.
 // @icon        https://banner2.cleanpng.com/20180513/xie/kisspng-twitch-computer-icons-logo-5af8037d689af0.0981376915262032614285.jpg
@@ -15,9 +15,8 @@
     'use strict';
 
     function editAdBanner() {
-        // Target button
-        var adButton = document.querySelector('.Layout-sc-1xcs6mc-0.hatIYF [data-a-target="tw-core-button-label-text"]');
-        var adButtonTexts = [
+        const adButtons = document.querySelectorAll('[data-a-target="tw-core-button-label-text"]');
+        const adButtonTexts = [
             "Go Ad-Free for Free",
             "Poista mainokset ilmaiseksi",
             "Poista mainokset",
@@ -26,28 +25,23 @@
             // add more here
         ];
 
-        if (adButton && adButtonTexts.includes(adButton.textContent.trim())) {
-            var adContainer = adButton.closest('.Layout-sc-1xcs6mc-0.hatIYF');
-            if (adContainer) {
-                adContainer.innerHTML = `
-                    <button class="ScCoreButton-sc-ocjdkq-0 kIbAir ScButtonIcon-sc-9yap0r-0 eSFFfM" aria-label="Placeholder" style="background: transparent; border: none; padding: 0; margin: 0;">
-                        <div class="ButtonIconFigure-sc-1emm8lf-0 buvMbr">
-                            <div class="ScIconLayout-sc-1q25cff-0 cASLMj">
-                                <div class="ScAspectRatio-sc-18km980-1 doeqbO tw-aspect">
-                                    <div class="ScAspectSpacer-sc-18km980-0 bIDIFh"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </button>
-                `;
+        let bannerReplaced = false;
 
-                //adContainer.style.width = 'auto';
-                //adContainer.style.height = 'auto';
-                //adContainer.style.padding = '0';
-                //adContainer.style.margin = '0';
-                //adContainer.style.backgroundColor = 'transparent';
-                //adContainer.style.border = 'none';
+        adButtons.forEach(adButton => {
+            if (adButton && adButtonTexts.includes(adButton.textContent.trim())) {
+                const adContainer = adButton.closest('.InjectLayout-sc-1i43xsx-0.kBtJDm');
+                if (adContainer) {
+                    adContainer.innerHTML = `
+                        <div style="background: transparent; border: none; padding: 0; margin: 0; width: 100%; height: 100%;"></div>
+                    `;
+                    console.log("Turbo Subscription Banner found.");
+                    bannerReplaced = true;
+                } else {
+                    // console.warn("Turbo Subscription Banner container not found.");
+                }
             }
+        });
+
         }
     }
 
