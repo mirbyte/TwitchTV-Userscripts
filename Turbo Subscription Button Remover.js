@@ -45,6 +45,7 @@
 
     editAdBanner();
 
+
     // Observer to handle dynamic changes in the DOM
     var observer = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
@@ -53,4 +54,3 @@
     });
     observer.observe(document.body, { subtree: true, childList: true });
 })();
-
