@@ -3,7 +3,7 @@
 // @namespace   https://github.com/mirbyte/TwitchTV-Userscripts/edit/main/Turbo%20Subscription%20Button%20Remover.js
 // @match       *://www.twitch.tv/*
 // @grant       none
-// @version     1.9
+// @version     2.0
 // @author      mirbyte
 // @description Edits the Turbo ad banner to be a transparent placeholder. Check GitHub page for the demonstration image.
 // @icon        https://banner2.cleanpng.com/20180513/xie/kisspng-twitch-computer-icons-logo-5af8037d689af0.0981376915262032614285.jpg
@@ -15,42 +15,69 @@
     'use strict';
 
     function editAdBanner() {
-        const adButtons = document.querySelectorAll('[data-a-target="tw-core-button-label-text"]');
+        // More robust selector approach
+        const adButtons = document.querySelectorAll('button, [role="button"]');
         const adButtonTexts = [
             "Go Ad-Free for Free",
-            "Poista mainokset ilmaiseksi",
+            "Poista mainokset ilmaiseksi", 
             "Poista mainokset",
             "Get Ad-Free",
             "Go Ad-Free",
+            "Try Turbo",
+            "Get Turbo"
             // add more here
         ];
 
-        let bannerReplaced = false;
-
-        adButtons.forEach(adButton => {
-            if (adButton && adButtonTexts.includes(adButton.textContent.trim())) {
-                const adContainer = adButton.closest('.InjectLayout-sc-1i43xsx-0.kBtJDm');
-                if (adContainer) {
-                    adContainer.innerHTML = `
-                        <div style="background: transparent; border: none; padding: 0; margin: 0; width: 100%; height: 100%;"></div>
+        adButtons.forEach(button => {
+            const buttonText = button.textContent?.trim();
+            if (buttonText && adButtonTexts.some(text => buttonText.includes(text))) {
+                // Look for parent containers with multiple approaches
+                let container = button.closest('[class*="Layout"]') || 
+                               button.closest('[class*="InjectLayout"]') ||
+                               button.closest('[class*="Banner"]') ||
+                               button.closest('[class*="Ad"]');
+                
+                if (container && container.offsetHeight > 20) {
+                    container.style.cssText = `
+                        background: transparent !important;
+                        border: none !important;
+                        padding: 0 !important;
+                        margin: 0 !important;
+                        height: 0 !important;
+                        overflow: hidden !important;
+                        opacity: 0 !important;
                     `;
-                    console.log("Turbo Subscription Banner found.");
-                    bannerReplaced = true;
-                } else {
-                    // console.warn("Turbo Subscription Banner container not found.");
+                    console.log("Turbo Subscription Banner hidden:", buttonText);
                 }
+            }
+        });
+
+        // Also target by aria-label or data attributes
+        const ariaButtons = document.querySelectorAll('[aria-label*="ad"], [aria-label*="Ad"], [aria-label*="turbo"], [aria-label*="Turbo"]');
+        ariaButtons.forEach(button => {
+            const container = button.closest('[class*="Layout"], [class*="Banner"], [class*="Ad"]');
+            if (container) {
+                container.style.display = 'none';
             }
         });
     }
 
+    // Run initially
     editAdBanner();
 
-
-    // Observer to handle dynamic changes in the DOM
-    var observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            editAdBanner();
-        });
+    // Enhanced observer with better performance
+    let observerTimeout;
+    const observer = new MutationObserver(function(mutations) {
+        clearTimeout(observerTimeout);
+        observerTimeout = setTimeout(editAdBanner, 100);
     });
-    observer.observe(document.body, { subtree: true, childList: true });
+    
+    if (document.body) {
+        observer.observe(document.body, { 
+            subtree: true, 
+            childList: true,
+            attributes: true,
+            attributeFilter: ['class', 'style']
+        });
+    }
 })();
