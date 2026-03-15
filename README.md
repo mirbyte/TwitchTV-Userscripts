@@ -15,7 +15,7 @@ Only for users who don't intend to use Turbo in the near future.
 <br><br>
 
 # Prime Notifications Remover
-Only for users who don't use Amazon Prime and do not intend to use in the future. This script will get rid of annoying daily notifications.
+Only for users who don't use Amazon Prime and do not intend to use in the near future. This script will get rid of annoying daily notifications.
 
 [![Install](https://img.shields.io/badge/Install%20Script-%E2%96%BC%20click%20here-6034b2?style=for-the-badge&logo=tampermonkey&logoColor=white)](https://update.greasyfork.org/scripts/524854/Twitchtv%20Amazon%20Prime%20Ad%20Remover.user.js)
 
