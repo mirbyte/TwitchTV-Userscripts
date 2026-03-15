@@ -3,86 +3,59 @@
 // @namespace   https://github.com/mirbyte/TwitchTV-Userscripts/edit/main/Amazon%20Prime%20Pop-up%20Remover.js
 // @match       https://www.twitch.tv/*
 // @grant       none
-// @version     1.2
+// @version     1.3
 // @author      mirbyte
 // @description Removes Amazon Prime overlay ad on Twitch streams. Check GitHub page for the demonstration image.
 // @icon        https://banner2.cleanpng.com/20180513/xie/kisspng-twitch-computer-icons-logo-5af8037d689af0.0981376915262032614285.jpg
 // ==/UserScript==
 
-(function() {
+(function () {
     'use strict';
 
-    function removePrimePopup() {
-        // Multiple approaches
-        const selectors = [
-            '[class*="prime"]',
-            '[class*="Prime"]',
-            '[class*="amazon"]',
-            '[class*="Amazon"]',
-            '[data-a-target*="prime"]',
-            '[role="dialog"]',
-            '[class*="modal"]',
-            '[class*="overlay"]',
-            '[class*="popup"]'
-        ];
+    const HANDLED_ATTR = 'data-prime-removed';
+    const PRIME_EXT_ID = 'd4uvtfdr04uq6raoenvj7m86gdk16v';
 
-        selectors.forEach(selector => {
-            const elements = document.querySelectorAll(selector);
-            elements.forEach(element => {
-                const text = element.textContent?.toLowerCase() || '';
-                const hasImages = element.querySelector('img[src*="prime"], img[alt*="prime"], img[alt*="amazon"]');
-
-                if ((text.includes('prime') || text.includes('amazon') || hasImages)
-                    && (text.includes('free') || text.includes('try') || text.includes('get') || text.includes('claim'))) {
-
-                    // Check if it's likely a popup/overlay
-                    const computedStyle = getComputedStyle(element);
-                    const isOverlay = computedStyle.position === 'fixed' ||
-                                    computedStyle.position === 'absolute' ||
-                                    computedStyle.zIndex > 100 ||
-                                    element.getAttribute('role') === 'dialog';
-
-                    if (isOverlay || element.offsetHeight > 100) {
-                        element.remove();
-                        console.log("Prime popup removed:", selector);
-                    }
-                }
-            });
+    function removePrimeCard() {
+        // Dock card — target by extension ID in image src
+        document.querySelectorAll(`img[src*="${PRIME_EXT_ID}"]:not([${HANDLED_ATTR}])`).forEach(img => {
+            img.setAttribute(HANDLED_ATTR, '1');
+            const card = img.closest('.extensions-dock-card') ?? img.closest('[class*="extensions-dock"]');
+            if (card) {
+                card.setAttribute(HANDLED_ATTR, '1');
+                card.style.setProperty('display', 'none', 'important');
+                console.debug('[PrimeRemover] Hidden dock card');
+            }
         });
 
-        // Also check for elements with specific Amazon Prime branding
-        const brandingElements = document.querySelectorAll('*');
-        brandingElements.forEach(element => {
-            const bgImage = getComputedStyle(element).backgroundImage;
-            if (bgImage && bgImage.includes('prime')) {
-                const parent = element.closest('[class*="Layout"], [class*="Modal"], [class*="Overlay"]');
-                if (parent) {
-                    parent.remove();
-                }
+        // Collapsed + expanded overlay button — single overlay container confirmed safe to hide
+        document.querySelectorAll(`.extensions-video-overlay-size-container:not([${HANDLED_ATTR}])`).forEach(el => {
+            el.setAttribute(HANDLED_ATTR, '1');
+            el.style.setProperty('display', 'none', 'important');
+            console.debug('[PrimeRemover] Hidden video overlay container');
+        });
+
+        // Iframe variant fallback
+        document.querySelectorAll(`iframe[src*="${PRIME_EXT_ID}"]:not([${HANDLED_ATTR}])`).forEach(iframe => {
+            iframe.setAttribute(HANDLED_ATTR, '1');
+            const container = iframe.closest('[class*="extensions-dock"]') ?? iframe.parentElement;
+            if (container) {
+                container.setAttribute(HANDLED_ATTR, '1');
+                container.style.setProperty('display', 'none', 'important');
+                console.debug('[PrimeRemover] Hidden iframe fallback');
             }
         });
     }
 
-    // Run on load
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', removePrimePopup);
-    } else {
-        removePrimePopup();
-    }
+    removePrimeCard();
 
-    // Enhanced observer
-    let debounceTimeout;
-    const observer = new MutationObserver(function(mutations) {
-        clearTimeout(debounceTimeout);
-        debounceTimeout = setTimeout(removePrimePopup, 100);
+    let debounce;
+    const observer = new MutationObserver(() => {
+        clearTimeout(debounce);
+        debounce = setTimeout(removePrimeCard, 150);
     });
 
-    if (document.body) {
-        observer.observe(document.body, {
-            subtree: true,
-            childList: true,
-            attributes: true,
-            attributeFilter: ['class', 'style', 'role']
-        });
-    }
+    observer.observe(document.body ?? document.documentElement, {
+        subtree: true,
+        childList: true
+    });
 })();
