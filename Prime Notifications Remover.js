@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name        Twitch.tv Amazon Prime Ad Remover
-// @namespace   https://github.com/mirbyte/TwitchTV-Userscripts/edit/main/Prime%20Notifications%20Remover.js
+// @namespace   https://github.com/mirbyte/TwitchTV-Userscripts
 // @match       https://www.twitch.tv/*
 // @grant       none
-// @version     1.3
+// @version     1.4
 // @author      mirbyte
 // @description Removes amazon prime ad/button on twitch.tv. Check GitHub page for the demonstration image.
-// @icon        https://banner2.cleanpng.com/20180513/xie/kisspng-twitch-computer-icons-logo-5af8037d689af0.0981376915262032614285.jpg
+// @icon        https://www.twitch.tv/favicon.ico
 // ==/UserScript==
 
 (function() {
