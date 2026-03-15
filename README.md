@@ -33,7 +33,7 @@ Pauses the autoplay of twitch.tv frontpage carousel.
 <br><br>
 
 # Amazon Prime Pop-up Remover
-Removes the Amazon Prime overlay ad that appears during streams.
+Removes the Amazon Prime overlay ads that appear during streams.
 
 [![Install](https://img.shields.io/badge/Install%20Script-%E2%96%BC%20click%20here-6034b2?style=for-the-badge&logo=tampermonkey&logoColor=white)](https://update.greasyfork.org/scripts/524846/Twitchtv%20Prime%20Pop-up%20Remover.user.js)
 
