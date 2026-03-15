@@ -3,80 +3,58 @@
 // @namespace   https://github.com/mirbyte/TwitchTV-Userscripts/edit/main/Frontpage%20Autoplay%20Off.js
 // @match       https://www.twitch.tv/
 // @grant       none
-// @version     1.2
+// @version     1.3
 // @author      mirbyte
 // @description Pauses Twitch.tv frontpage carousel video that autoplays recommended streams. Check GitHub page for the demonstration image.
 // @icon        https://banner2.cleanpng.com/20180513/xie/kisspng-twitch-computer-icons-logo-5af8037d689af0.0981376915262032614285.jpg
 // ==/UserScript==
 
-(function() {
+
+(function () {
     'use strict';
 
-    function pauseAutoplay() {
-        // Multiple approaches
-        const selectors = [
-            '[class*="carousel"] video',
-            '[class*="front-page"] video',
-            '[class*="frontpage"] video',
-            '[class*="hero"] video',
-            '[data-a-target*="carousel"] video',
-            'video[autoplay]'
-        ];
+    const HANDLED_ATTR = 'data-autoplay-stopped';
 
-        let videoPaused = false;
+    function isFrontPage() {
+        return window.location.pathname === '/' || window.location.pathname === '';
+    }
 
-        selectors.forEach(selector => {
-            const videos = document.querySelectorAll(selector);
-            videos.forEach(video => {
-                if (video && !video.paused && video.readyState > 0) {
-                    video.pause();
-                    video.autoplay = false;
-                    video.setAttribute('autoplay', 'false');
-                    videoPaused = true;
-                    console.log("Frontpage video paused:", selector);
-                }
-            });
+    function interceptVideo(video) {
+        if (video.hasAttribute(HANDLED_ATTR)) return;
+        video.setAttribute(HANDLED_ATTR, '1');
+
+        video.muted = true;
+        video.autoplay = false;
+        video.removeAttribute('autoplay');
+
+        if (!video.paused) video.pause();
+
+        video.addEventListener('play', () => {
+            // Only block playback if still on front page
+            if (isFrontPage()) {
+                video.pause();
+                console.debug('[AutoplayOff] Intercepted play attempt on front page');
+            }
         });
 
-        // Also pause any video that's currently playing on the front page
-        if (window.location.pathname === '/' || window.location.pathname === '') {
-            const allVideos = document.querySelectorAll('video');
-            allVideos.forEach(video => {
-                if (!video.paused && video.duration > 5) {
-                    video.pause();
-                    video.autoplay = false;
-                    videoPaused = true;
-                }
-            });
-        }
-
-        return videoPaused;
+        console.debug('[AutoplayOff] Video intercepted');
     }
 
-    // Run initially
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', pauseAutoplay);
-    } else {
-        pauseAutoplay();
+    function scanVideos() {
+        if (!isFrontPage()) return;
+        document.querySelectorAll(`video:not([${HANDLED_ATTR}])`).forEach(interceptVideo);
     }
 
-    // Enhanced observer with throttling
-    let observerTimeout;
-    const observer = new MutationObserver(function(mutations) {
-        clearTimeout(observerTimeout);
-        observerTimeout = setTimeout(() => {
-            if (window.location.pathname === '/' || window.location.pathname === '') {
-                pauseAutoplay();
-            }
-        }, 200);
+    scanVideos();
+
+    let debounce;
+    const observer = new MutationObserver(() => {
+        clearTimeout(debounce);
+        debounce = setTimeout(scanVideos, 100);
     });
 
-    if (document.body) {
-        observer.observe(document.body, {
-            subtree: true,
-            childList: true,
-            attributes: true,
-            attributeFilter: ['autoplay', 'src']
-        });
-    }
+    observer.observe(document.body ?? document.documentElement, {
+        subtree: true,
+        childList: true
+    });
 })();
