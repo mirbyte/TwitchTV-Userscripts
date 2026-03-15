@@ -6,7 +6,7 @@
 ---
 
 # Turbo Subscription Button Remover
-Only for users who don't intend to use Turbo in the near future. Adds an empty placeholder for aesthetic purposes.
+Only for users who don't intend to use Turbo in the near future.
 
 [![Install](https://img.shields.io/badge/Install%20Script-%E2%96%BC%20click%20here-6034b2?style=for-the-badge&logo=tampermonkey&logoColor=white)](https://update.greasyfork.org/scripts/524848/Turbo%20Subscription%20Button%20Remover.user.js)
 
